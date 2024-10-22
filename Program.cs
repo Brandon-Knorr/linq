@@ -8,7 +8,10 @@ List<Character> characters = [];
 characters.AddRange(dks);
 characters.AddRange(marios);
 // display all characters
-foreach(Character character in characters)
-{
-  Console.WriteLine(character.Display());
-}
+// foreach(Character character in characters)
+// {
+//   Console.WriteLine(character.Display());
+// }
+Console.Clear();
+// display first character
+Console.WriteLine(characters.First().Display());
