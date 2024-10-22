@@ -47,15 +47,16 @@ Console.Clear();
 // Console.WriteLine(characters.First(c => c.YearCreated == characters.Min(c => c.YearCreated)).Display());
 
 // are there any characters created in 1995?
-//bool Character1995 = characters.Any(c => c.YearCreated == 1995);
-//Console.WriteLine($"Are there characters created in 1995: {Character1995}");
+// bool Character1995 = characters.Any(c => c.YearCreated == 1995);
+// Console.WriteLine($"Are there characters created in 1995: {Character1995}");
 // how many characters were created in 1995
-//Console.WriteLine($"How many? {characters.Count(c => c.YearCreated == 1995)}");
+// Console.WriteLine($"How many? {characters.Count(c => c.YearCreated == 1995)}");
 // which characters were created in 1995
 // foreach(CharacterDTO characterDTO in characters.Where(c => c.YearCreated == 1995).Select(c => new CharacterDTO{ Id = c.Id, Name = c.Name, Series = c.Series }).OrderBy(c => c.Name))
 // {
 //   Console.WriteLine(characterDTO.Display());
 // }
+
 // how many characters in total (all series)?
 int CharacterCount = characters.Count();
 Console.WriteLine($"There are {CharacterCount} characters in all series");
@@ -65,3 +66,6 @@ Console.WriteLine($"There are {MarioCount} characters in the Mario series");
 // how many characters appear in the Donkey Kong series?
 int DkCount = characters.Where(c => c.Series.Contains("Donkey Kong")).Count();
 Console.WriteLine($"There are {DkCount} characters in the Donkey Kong series");
+// how many characters appear in the Mario & Donkey Kong series?
+int DkMarioCount = characters.Where(c => c.Series.Contains("Donkey Kong") && c.Series.Contains("Mario")).Count();
+Console.WriteLine($"There are {DkMarioCount} characters that appear in Mario and Donkey Kong series");
