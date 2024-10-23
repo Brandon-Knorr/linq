@@ -104,3 +104,8 @@ Console.Clear();
 // How many characters were created in 1981? (all series)
 int characters1981 = characters.Count(c => c.YearCreated == 1981);
 Console.WriteLine($"There are {characters1981} characters created in 1981");
+// List the characters created in 1981 (all series) - return the name and series only
+foreach(CharacterDTO characterDTO in characters.Where(c => c.YearCreated == 1981).Select(c => new CharacterDTO{ Name = c.Name, Series = c.Series }))
+{
+  Console.WriteLine($"{characterDTO.Name} - {string.Join(", ", characterDTO.Series)}");
+}
