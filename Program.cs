@@ -113,7 +113,10 @@ Console.Clear();
 // int characters1981Mario = characters.Count(c => c.YearCreated == 1981 && c.Series.Contains("Mario"));
 // Console.WriteLine($"There are {characters1981Mario} characters created in 1981 in the Mario series");
 // List the characters created in 1981 in the Mario series - return the name only
-foreach(string? name in characters.Where(c => c.YearCreated == 1981 && c.Series.Contains("Mario")).Select(c => c.Name))
-{
-  Console.WriteLine($"\t{name}");
-}
+// foreach(string? name in characters.Where(c => c.YearCreated == 1981 && c.Series.Contains("Mario")).Select(c => c.Name))
+// {
+//   Console.WriteLine($"\t{name}");
+// }
+// how many characters were created in 1981 in the Donkey Kong series?
+int characters1981Dk = characters.Count(c => c.YearCreated == 1981 && c.Series.Contains("Donkey Kong"));
+Console.WriteLine($"There are {characters1981Dk} characters created in 1981 in the Donkey Kong series");
