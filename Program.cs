@@ -118,5 +118,10 @@ Console.Clear();
 //   Console.WriteLine($"\t{name}");
 // }
 // how many characters were created in 1981 in the Donkey Kong series?
-int characters1981Dk = characters.Count(c => c.YearCreated == 1981 && c.Series.Contains("Donkey Kong"));
-Console.WriteLine($"There are {characters1981Dk} characters created in 1981 in the Donkey Kong series");
+// int characters1981Dk = characters.Count(c => c.YearCreated == 1981 && c.Series.Contains("Donkey Kong"));
+// Console.WriteLine($"There are {characters1981Dk} characters created in 1981 in the Donkey Kong series");
+// List the characters created in 1981 in the Donkey Kong series - return the name only
+foreach(string? name in characters.Where(c => c.YearCreated == 1981 && c.Series.Contains("Donkey Kong")).Select(c => c.Name))
+{
+  Console.WriteLine($"\t{name}");
+}
