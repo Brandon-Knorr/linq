@@ -207,5 +207,10 @@ Console.Clear();
 //     Console.WriteLine($"\t{name}");
 // }
 //How many characters in mario series that have a species of something other than Human or Koopa?
-int otherSpeciesCountMario = characters.Count(c => c.Series.Contains("Mario") && !c.Species.Contains("Human") && !c.Species.Contains("Koopa"));
-Console.WriteLine($"There are {otherSpeciesCountMario} characters in the Mario series with a species other than Human or Koopa");
+// int otherSpeciesCountMario = characters.Count(c => c.Series.Contains("Mario") && !c.Species.Contains("Human") && !c.Species.Contains("Koopa"));
+// Console.WriteLine($"There are {otherSpeciesCountMario} characters in the Mario series with a species other than Human or Koopa");
+// List the characters in the Mario series that have a species of something other than Human or Koopa - return the name and species only
+foreach(Character character in characters.Where(c => c.Series.Contains("Mario") && !c.Species.Contains("Human") && !c.Species.Contains("Koopa")))
+{
+    Console.WriteLine($"{character.Name} - {character.Species}");
+}
