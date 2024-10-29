@@ -175,6 +175,11 @@ Console.Clear();
 //   Console.WriteLine($"{characterDTO.Name} - {string.Join(", ", characterDTO.Alias)}");
 // }
 // do any characters have an alias of Winter Kong?
-bool winterKong = characters.Any(c => c.Alias.Contains("Winter Kong"));
-Console.WriteLine($"Are there characters with the alias Winter Kong: {winterKong}");
+// bool winterKong = characters.Any(c => c.Alias.Contains("Winter Kong"));
+// Console.WriteLine($"Are there characters with the alias Winter Kong: {winterKong}");
+// List the characters that have an alias of Winter Kong - return the name and alias only
+foreach(CharacterDTO character in characters.Where(c => c.Alias.Contains("Winter Kong")).Select(c => new CharacterDTO { Name = c.Name, Alias = c.Alias }))
+{
+  Console.WriteLine($"{character.Name} - {string.Join(", ", character.Alias)}");
+}
 
