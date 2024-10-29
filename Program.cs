@@ -162,9 +162,11 @@ Console.Clear();
 // int noAliasCountDk = characters.Count(c => c.Series.Contains("Donkey Kong") && c.Alias.Count() == 0);
 // Console.WriteLine($"There are {noAliasCountDk} characters with no alias in the Donkey Kong series");
 // List the characters that have no alias in the Donkey Kong series - return the name and alias only
-foreach(CharacterDTO characterDTO in characters.Where(c => c.Series.Contains("Donkey Kong") && c.Alias.Count() == 0).Select(c => new CharacterDTO{ Name = c.Name, Alias = c.Alias }))
-{
-  Console.WriteLine($"{characterDTO.Name} - {string.Join(", ", characterDTO.Alias)}");
-}
-
+// foreach(CharacterDTO characterDTO in characters.Where(c => c.Series.Contains("Donkey Kong") && c.Alias.Count() == 0).Select(c => new CharacterDTO{ Name = c.Name, Alias = c.Alias }))
+// {
+//   Console.WriteLine($"{characterDTO.Name} - {string.Join(", ", characterDTO.Alias)}");
+// }
+//Do any characters have an alias of Snowmad King?
+bool snowmadKing = characters.Any(c => c.Alias.Contains("Snowmad King"));
+Console.WriteLine($"Are there characters with the alias Snowmad King: {snowmadKing}");
 
