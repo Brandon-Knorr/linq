@@ -167,6 +167,11 @@ Console.Clear();
 //   Console.WriteLine($"{characterDTO.Name} - {string.Join(", ", characterDTO.Alias)}");
 // }
 //Do any characters have an alias of Snowmad King?
-bool snowmadKing = characters.Any(c => c.Alias.Contains("Snowmad King"));
-Console.WriteLine($"Are there characters with the alias Snowmad King: {snowmadKing}");
+// bool snowmadKing = characters.Any(c => c.Alias.Contains("Snowmad King"));
+// Console.WriteLine($"Are there characters with the alias Snowmad King: {snowmadKing}");
+//List the characters that have an alias of Snowmad King - return the name and alias only
+foreach(CharacterDTO characterDTO in characters.Where(c => c.Alias.Contains("Snowmad King")).Select(c => new CharacterDTO{ Name = c.Name, Alias = c.Alias }))
+{
+  Console.WriteLine($"{characterDTO.Name} - {string.Join(", ", characterDTO.Alias)}");
+}
 
