@@ -159,7 +159,12 @@ Console.Clear();
 // bool noAliasDk = characters.Any(c => c.Series.Contains("Donkey Kong") && c.Alias.Count() == 0);
 // Console.WriteLine($"Are there characters with no alias in the Donkey Kong series: {noAliasDk}");
 //how many characters have no alias in the Donkey Kong series?
-int noAliasCountDk = characters.Count(c => c.Series.Contains("Donkey Kong") && c.Alias.Count() == 0);
-Console.WriteLine($"There are {noAliasCountDk} characters with no alias in the Donkey Kong series");
+// int noAliasCountDk = characters.Count(c => c.Series.Contains("Donkey Kong") && c.Alias.Count() == 0);
+// Console.WriteLine($"There are {noAliasCountDk} characters with no alias in the Donkey Kong series");
+// List the characters that have no alias in the Donkey Kong series - return the name and alias only
+foreach(CharacterDTO characterDTO in characters.Where(c => c.Series.Contains("Donkey Kong") && c.Alias.Count() == 0).Select(c => new CharacterDTO{ Name = c.Name, Alias = c.Alias }))
+{
+  Console.WriteLine($"{characterDTO.Name} - {string.Join(", ", characterDTO.Alias)}");
+}
 
 
