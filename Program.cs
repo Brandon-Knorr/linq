@@ -183,6 +183,10 @@ Console.Clear();
 //   Console.WriteLine($"{character.Name} - {string.Join(", ", character.Alias)}");
 // }
 // How many characters have the species of Kremling?
-int kremlingCount = characters.Count(c => c.Species.Contains("Kremling"));
-Console.WriteLine($"There are {kremlingCount} characters with the species of Kremling");
-
+// int kremlingCount = characters.Count(c => c.Species.Contains("Kremling"));
+// Console.WriteLine($"There are {kremlingCount} characters with the species of Kremling");
+// List the characters that have the species of Kremling - return the name and species only
+foreach(CharacterDTO character in characters.Where(c => c.Species.Contains("Kremling")).Select(c => new CharacterDTO { Name = c.Name}))
+{
+  Console.WriteLine($"{character.Name}");
+}

@@ -4,6 +4,7 @@ public class CharacterDTO
   public string? Name { get; set; }
   public List<string> Series { get; set; } = [];
   public List<string> Alias { get; set; } = [];
+  public string? Species { get; set; }
   public string Display()
   {
     return $"Id: {Id}\nName: {Name}\nSeries: {string.Join(", ", Series)}\n";
